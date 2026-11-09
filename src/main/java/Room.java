@@ -5,6 +5,7 @@ public class Room {
     private boolean isOccupied;
     private boolean isDirty;
 
+
         // constructor (Sets the initial values)
 
     public Room( int numberOfBeds, double price, boolean isOccupied, boolean isDirty) {
