@@ -13,6 +13,7 @@ public class Room {
         this.price = price;
         this.isOccupied = isOccupied;
         this.isDirty = isDirty;
+
     }
 
 }
