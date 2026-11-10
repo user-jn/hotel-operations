@@ -29,6 +29,13 @@ public class Main {
         System.out.println("Dirty: " + room1.isDirty());
         System.out.println("Available: " + room1.isAvailable());
 
+        // Test cleanRoom() method
+        System.out.println("\n=== CLEAN ROOM ===");
+        room1.cleanRoom();
+        System.out.println("Occupied: " + room1.isOccupied());
+        System.out.println("Dirty: " + room1.isDirty());
+        System.out.println("Available: " + room1.isAvailable());
+
 
         // Create employee object
         Employee employee1 = new Employee(
