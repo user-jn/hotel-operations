@@ -41,8 +41,9 @@ public class Main {
         Employee employee1 = new Employee(
                 101, "Phil", "Front Desk", 20.00, 45);
 
-        // Exercise 2 - add testing for new methods punchIn() & punchOut()
+        System.out.println("=== MANUAL TIME CARD ===");
 
+        // Exercise 2 - add testing for new methods punchIn() & punchOut() - manual
         // Employee clocks in at 9 am
         employee1.punchIn(9);
 
@@ -55,13 +56,24 @@ public class Main {
         // Exercise 2  - display updated hours and pay
         // Test employee methods
 
-        System.out.println("=== EMPLOYEE TEST ===");
-
         System.out.println("Employee: " + employee1.getName());
         System.out.println("Hours Worked: " + employee1.getHoursWorked());
         System.out.println("Regular Hours: " + employee1.getRegularHours());
         System.out.println("Overtime Hours: " + employee1.getOvertimeHours());
 
         System.out.printf("Total Pay: $%.2f%n", employee1.getTotalPay());
+
+        // New Exercise 3 overloaded methods
+        System.out.println("\n=== AUTOMATIC TIME CARD ===");
+
+        // Automatically clock in using current time
+        employee1.punchIn();
+
+        // Automatically clock out using current time
+        employee1.punchOut();
+
+        System.out.println("Updated Hours: " + employee1.getHoursWorked());
+
+
     }
 }

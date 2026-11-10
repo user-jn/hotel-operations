@@ -1,7 +1,8 @@
 
 import java.time.LocalDateTime;
 import java.time.Duration;
-import java.time.LocalDateTime; // exercise 3 modify employee.jave w/overloaded methods for punchIn() & punchOut()
+
+// exercise 3 modify employee.jave w/overloaded methods for punchIn() & punchOut()
 
 public class Employee {
 
@@ -115,7 +116,31 @@ public class Employee {
         System.out.println("Clocked in at " + now.getHour() + ":" + String.format("%02d", now.getMinute()));
     }
 
-    //
+    // overload punch out - gets current time
+    public void punchOut() {
+        if (!punchedIn || clockInTime == null) {
+            System.out.println("Employee must use punchIn() first.");
+            return;
+        }
+
+        // get current date and time
+        LocalDateTime now = LocalDateTime.now();
+
+        // calculate total worked
+        Long minutesWorked = java.time.Duration.between(clockInTime, now).toMinutes();
+
+        // Convert minutes into hours
+        double hoursWorkedThisShift = minutesWorked / 60.0;
+
+        // add shift hours to hours worked
+        hoursWorked += hoursWorkedThisShift;
+
+        // Reset time card
+        punchedIn = false;
+        clockInTime = null;
+
+        System.out.println("Clocked out at " + now.getHour() + ":" + String.format("%02d", now.getMinute()));
+
 
     }
 }
