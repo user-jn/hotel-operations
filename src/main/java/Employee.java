@@ -1,4 +1,7 @@
 
+import java.time.LocalDateTime;
+import java.time.Duration;
+import java.time.LocalDateTime; // exercise 3 modify employee.jave w/overloaded methods for punchIn() & punchOut()
 
 public class Employee {
 
@@ -12,6 +15,14 @@ public class Employee {
     // Employee time card
     private int startTime;
 
+    // Exercise 3 - store actual clocks in date & time
+    private LocalDateTime clockInTime;
+
+    // now track whether employee is clocked in
+    private boolean punchedIn;
+
+
+
     // Constructor (sets the initial values)
     public Employee(int employeeId, String name, String department,
                     double payRate, double hoursWorked) {
@@ -21,6 +32,8 @@ public class Employee {
         this.department = department;
         this.payRate = payRate;
         this.hoursWorked = hoursWorked;
+
+        this.punchedIn = false;
     }
 
     // Get employee ID
@@ -82,6 +95,28 @@ public class Employee {
 
         // Add shift hours to total hours worked
         hoursWorked += hoursWorkedThisShift;
+    }
+
+    // Exercise 3  overloaded methods
+    // Overloaded punch in - automatically get current time
+    public void punchIn() {
+
+        // Get current date and time
+        LocalDateTime now = LocalDateTime.now();
+
+        // Save actual clock-in time, including minutes
+        clockInTime = now;
+
+        // also save the hour
+        startTime = now.getHour();
+
+        punchedIn = true;
+
+        System.out.println("Clocked in at " + now.getHour() + ":" + String.format("%02d", now.getMinute()));
+    }
+
+    //
+
     }
 }
 
