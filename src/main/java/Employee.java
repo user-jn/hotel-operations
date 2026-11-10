@@ -1,5 +1,4 @@
 
-package com.pluralsight;
 
 public class Employee {
 
@@ -9,6 +8,9 @@ public class Employee {
     private String department;
     private double payRate;
     private double hoursWorked;
+
+    // Employee time card
+    private int startTime;
 
     // Constructor (sets the initial values)
     public Employee(int employeeId, String name, String department,
@@ -64,4 +66,25 @@ public class Employee {
 
         return regularPay + overtimePay;
     }
+
+    // Exercise 2 - Clock in employee
+    public void punchIn(int time) {
+
+        // Save the time employee started working
+        startTime = time;
+    }
+
+    // Exercise 2 - Clock out employee
+    public void punchOut(int time) {
+
+        // Calculate hours worked during this shift
+        int hoursWorkedThisShift = time - startTime;
+
+        // Add shift hours to total hours worked
+        hoursWorked += hoursWorkedThisShift;
+    }
 }
+
+
+
+
