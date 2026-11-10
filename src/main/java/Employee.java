@@ -17,4 +17,27 @@ public class Employee {
         this.hoursWorked = hoursWorked;
 
     }
+
+    // Getters
+
+    // Get employee Id
+    public int getEmployeeId() {
+        return employeeId;
+    }
+
+    // Get employee name
+    public String getName() {
+        return name;
+    }
+
+    // Get department
+    public String getDepartment() {
+        return department;
+    }
+
+    // Get hourly pay rate
+    public double getPayRate() {
+        return payRate;
+    }
+
 }
