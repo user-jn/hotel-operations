@@ -50,6 +50,6 @@ public class Hotel {
         // Get number of booked basic double rooms
         public int getBookedBasicRooms() {
             return bookedBasicRooms;
-
+        }
 
 
