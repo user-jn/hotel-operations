@@ -25,8 +25,31 @@ public class Hotel {
             this.numberOfRooms = numberOfRooms;
             this.bookedSuites = bookedSuites;
             this.bookedBasicRooms = bookedBasicRooms;
-
-
         }
 
-}
+         // Get hotel name
+        public String getName() {
+             return name;
+         }
+
+         // Get total number of king suites
+         public int getNumberOfSuites() {
+             return numberOfSuites;
+         }
+
+        // Get total number of basic double rooms
+        public int getNumberOfRooms() {
+            return numberOfRooms;
+        }
+
+        // Get number of booked king suites
+        public int getBookedSuites() {
+            return bookedSuites;
+        }
+
+        // Get number of booked basic double rooms
+        public int getBookedBasicRooms() {
+            return bookedBasicRooms;
+
+
+
