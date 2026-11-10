@@ -41,18 +41,27 @@ public class Main {
         Employee employee1 = new Employee(
                 101, "Phil", "Front Desk", 20.00, 45);
 
+        // Exercise 2 - add testing for new methods punchIn() & punchOut()
+
+        // Employee clocks in at 9 am
+        employee1.punchIn(9);
+
+        //Employee then clocks out at 5 pm
+        employee1.punchOut(17);
+
+
         System.out.println();
 
+        // Exercise 2  - display updated hours and pay
         // Test employee methods
+
+        System.out.println("=== EMPLOYEE TEST ===");
+
         System.out.println("Employee: " + employee1.getName());
+        System.out.println("Hours Worked: " + employee1.getHoursWorked());
+        System.out.println("Regular Hours: " + employee1.getRegularHours());
+        System.out.println("Overtime Hours: " + employee1.getOvertimeHours());
 
-        System.out.println("Regular Hours: "
-                + employee1.getRegularHours());
-
-        System.out.println("Overtime Hours: "
-                + employee1.getOvertimeHours());
-
-        System.out.printf("Total Pay: $%.2f%n",
-                employee1.getTotalPay());
+        System.out.printf("Total Pay: $%.2f%n", employee1.getTotalPay());
     }
 }
