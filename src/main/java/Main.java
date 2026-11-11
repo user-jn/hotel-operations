@@ -118,12 +118,26 @@ public class Main {
         System.out.println("Suite Booking Successful: " + suiteBooked);
         System.out.println("Basic Booking Successful: " + basicBooked);
 
+
         // Check availability after booking
         System.out.println("\n=== BOOKING RESULTS ===");
         System.out.println("Booked Suites: " + hotel1.getBookedSuites());
         System.out.println("Booked Basic Rooms: " + hotel1.getBookedBasicRooms());
         System.out.println("Available Suites: " + hotel1.getAvailableSuites());
         System.out.println("Available Rooms: " + hotel1.getAvailableRooms());
+
+        // Second constructor test //
+
+        Hotel hotel2 = new Hotel("New York New York", 10, 30, 3, 15);
+
+        System.out.println("\n=== SECOND HOTEL TEST ===");
+
+        System.out.println("Hotel: " + hotel2.getName());
+        System.out.println("Booked Suites: " + hotel2.getBookedSuites());
+        System.out.println("Booked Rooms: " + hotel2.getBookedBasicRooms());
+        System.out.println("Available Suites: " + hotel2.getAvailableSuites());
+        System.out.println("Available Rooms: " + hotel2.getAvailableRooms());
+
 
     }
 }
