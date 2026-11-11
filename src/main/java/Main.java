@@ -28,13 +28,29 @@ public class Main {
         System.out.println("Dirty: " + room1.isDirty());
         System.out.println("Available: " + room1.isAvailable());
 
-        // Test cleanRoom() method
+        // TESTING - cleanRoom() method
         System.out.println("\n=== CLEAN ROOM ===");
         room1.cleanRoom();
         System.out.println("Occupied: " + room1.isOccupied());
         System.out.println("Dirty: " + room1.isDirty());
         System.out.println("Available: " + room1.isAvailable());
 
+        // TESTING - RESERVATION
+
+        Reservation reservation1 = new Reservation("king", 3, true);
+
+        System.out.println("\n=== RESERVATION TEST ===");
+        System.out.println("Room Type: " + reservation1.getRoomType());
+        System.out.println("Weekend: " + reservation1.isWeekend());
+        System.out.printf("Nightly Price: $%.2f%n", reservation1.getReservationTotal());
+
+        // TEST SETTERS
+        reservation1.setRoomType("double");
+        reservation1.setNumberOfNights(2);
+        reservation1.setWeekend(false);
+
+        System.out.println("\nUpdated Nights: " + reservation1.getNumberOfNights());
+        System.out.printf("Updated Total: $%.2f%n", reservation1.getReservationTotal());
 
         // Create employee object
         Employee employee1 = new Employee(

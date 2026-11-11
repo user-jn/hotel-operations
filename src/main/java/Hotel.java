@@ -3,6 +3,7 @@
 public class Hotel {
 
     // Attributes (what the hotel KNOWS)
+
     private String name;
     private int numberOfSuites;
     private int numberOfRooms;
@@ -65,28 +66,32 @@ public class Hotel {
         return numberOfRooms - bookedBasicRooms;
     }
 
-    // Book king suites or basic double rooms
+    // Book one or more hotel rooms
     public boolean bookRoom(int roomCount, boolean suite) {
 
-        // Make sure requested number of rooms is valid
+        // Prevent booking zero or negative rooms
         if (roomCount <= 0) {
             return false;
         }
 
-        // Check if guest wants a king suite
+        // Check if booking a king suite
         if (suite) {
 
-            // Make sure enough suites are available
+            // Check whether enough suites are available
             if (roomCount <= getAvailableSuites()) {
+
                 bookedSuites += roomCount;
+
                 return true;
             }
 
         } else {
 
-            // Make sure enough basic rooms are available
+            // Check whether enough basic rooms are available
             if (roomCount <= getAvailableRooms()) {
+
                 bookedBasicRooms += roomCount;
+
                 return true;
             }
         }
