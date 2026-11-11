@@ -1,4 +1,3 @@
-import java.sql.SQLOutput;
 
 public class Main {
 
@@ -74,6 +73,41 @@ public class Main {
 
         System.out.println("Updated Hours: " + employee1.getHoursWorked());
 
+
+        // HOTEL TEST STARTS HERE
+
+        Hotel hotel1 = new Hotel("Hotel California", 20, 60);
+
+        System.out.println("\n=== HOTEL TEST ===");
+
+        // Display hotel information
+        System.out.println("Hotel: " + hotel1.getName());
+        System.out.println("Total Suites: " + hotel1.getNumberOfSuites());
+        System.out.println("Total Basic Rooms: " + hotel1.getNumberOfRooms());
+
+        // Check availability before booking
+        System.out.println("\n=== BEFORE BOOKING ===");
+        System.out.println("Available Suites: " + hotel1.getAvailableSuites());
+        System.out.println("Available Rooms: " + hotel1.getAvailableRooms());
+
+        // Book 3 King suites
+        boolean suiteBooked = hotel1.bookRoom(3, true);
+
+        // Book 20 basic rooms
+        boolean basicBooked = hotel1.bookRoom(20,false);
+
+
+        // Display booking results
+        System.out.println("\n=== BOOKING RESULTS ===");
+        System.out.println("Suite Booking Successful: " + suiteBooked);
+        System.out.println("Basic Booking Successful: " + basicBooked);
+
+        // Check availability after booking
+        System.out.println("\n=== BOOKING RESULTS ===");
+        System.out.println("Booked Suites: " + hotel1.getBookedSuites());
+        System.out.println("Booked Basic Rooms: " + hotel1.getBookedBasicRooms());
+        System.out.println("Available Suites: " + hotel1.getAvailableSuites());
+        System.out.println("Available Rooms: " + hotel1.getAvailableRooms());
 
     }
 }
